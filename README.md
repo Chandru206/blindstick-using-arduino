@@ -2,8 +2,8 @@
 
 An assistive device for visually impaired users built with Arduino UNO, HC‑SR04 ultrasonic sensor, buzzer, and LED for real-time obstacle detection.
 
-## 🔗 Live Simulation
-[Run it here on Wokwi](https://wokwi.com/projects/35d9b1e0e3fca4ed)
+[🎮 Live Simulation on Wokwi](https://wokwi.com/projects/375329599699479553)
+
 
 ## 🌟 Features
 - Real-time distance measurement up to 50 cm  
