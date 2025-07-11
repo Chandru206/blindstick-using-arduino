@@ -1,55 +1,66 @@
-# Smart Blind Stick 🚶‍♂️ using Arduino Uno
+# 👨‍🦯 Smart Blind Stick using Arduino Uno
 
-This project simulates a Smart Blind Stick designed for visually impaired individuals.  
-It uses an **ultrasonic sensor** to detect obstacles and provides real-time feedback via **a buzzer and an LED**.
-
-Built using:
-- Arduino Uno
-- HC-SR04 Ultrasonic Sensor
-- Active Buzzer
-- LED with 220Ω Resistor
+This project simulates a smart blind stick built for visually impaired individuals.  
+Using an **HC-SR04 ultrasonic sensor**, it detects nearby obstacles and gives real-time feedback through a **buzzer and blinking LED** — both change based on how close an object is.
 
 ---
 
 ## 🔗 Live Simulation  
-🎮 [Click here to run the project on Wokwi](https://wokwi.com/projects/436178318759622657)
+🎮 [Try the live demo on Wokwi](https://wokwi.com/projects/436178318759622657)
 
 ---
 
-## 🧠 How It Works
+## 📐 How It Works
 
-The HC-SR04 sensor measures distance to nearby obstacles.
+The HC-SR04 sensor continuously measures the distance to obstacles.
 
-| Distance (in cm) | Behavior                          |
-|------------------|-----------------------------------|
-| ≤ 5 cm           | 🔴 LED ON + 🔊 Buzzer ON (alert)   |
-| > 5 cm           | ⚫ LED OFF + 🔇 Buzzer OFF          |
+Based on that distance:
 
-- The buzzer and LED provide an alert when any obstacle is **5cm or closer** to the sensor.
-- Values are printed to Serial Monitor for debugging.
+| Distance to Object | LED Behavior         | Buzzer Behavior       |
+|--------------------|----------------------|------------------------|
+| ≤ 5 cm             | Constant ON          | Continuous beep        |
+| 6 – 15 cm          | Fast blinking        | Fast pulse beeping     |
+| 16 – 30 cm         | Slow blinking        | Slow beep              |
+| > 30 cm            | OFF                  | Silent                 |
 
----
-
-## 💾 Files Included
-
-| File Name     | Purpose                           |
-|---------------|-----------------------------------|
-| `sketch.ino`  | Arduino source code                |
-| `project.json`| Wokwi circuit configuration        |
-| `README.md`   | Project overview and usage info    |
+- Both LED and buzzer are **pulse-controlled** to help the user sense how close the obstacle is.
+- All distances are measured in real-time and printed to the Serial Monitor.
 
 ---
 
-## 💡 Ideal Use Case
+## 🧰 Components Used
 
-This project is ideal for:
-- Engineering students
-- IoT beginners
-- Arduino hobbyists working on assistive devices
+- Arduino Uno R3  
+- HC-SR04 Ultrasonic Sensor  
+- Buzzer (active)  
+- LED + 220Ω resistor  
+- Breadboard & jumper wires
 
 ---
 
-## 📜 License
+## 💾 Project Files
 
-Open-source under MIT License.  
-Feel free to use and modify with credit.
+| File           | Description                            |
+|----------------|----------------------------------------|
+| `sketch.ino`   | Arduino logic with proximity behavior  |
+| `project.json` | Circuit setup for Wokwi simulation     |
+| `README.md`    | This file                              |
+
+---
+
+## 💡 Use Case
+
+Ideal for:
+- Assistive technology demos  
+- Arduino beginners  
+- Academic or portfolio projects  
+- Hands-on learning in embedded systems
+
+---
+
+## 📃 License
+
+This project is open-source (MIT License).  
+Feel free to modify and build upon it for educational or personal use.
+
+---
